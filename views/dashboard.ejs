@@ -1,0 +1,22 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Card 1 -->
+    <div class="bg-white p-4 shadow-md rounded-md">
+    <div class="text-lg font-bold mb-2">Success</div>
+    <div class="text-2xl"><%- data.total_success_product %></div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-white p-4 shadow-md rounded-md">
+    <div class="text-lg font-bold mb-2">Skipped</div>
+    <div class="text-2xl"><%- data.total_failed_product %></div>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-white p-4 shadow-md rounded-md">
+        <div class="text-lg font-bold mb-2">Duplicated</div>
+        <div class="text-2xl"><%- data.total_duplicated_product %></div>
+        </div>
+    <!-- Card 4 -->
+    <div class="bg-white p-4 shadow-md rounded-md">
+    <div class="text-lg font-bold mb-2">Total</div>
+    <div class="text-2xl"><%- data.total_success_product + data.total_failed_product + data.total_duplicated_product %></div>
+    </div>
+</div>

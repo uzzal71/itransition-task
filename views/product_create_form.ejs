@@ -1,0 +1,40 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="mt-8 bg-white p-6 shadow-md rounded-md col-span-1 md:col-span-2 lg:col-span-3">
+    <h2 class="text-xl font-bold mb-4">Manual Product Entry</h2>
+    <form action="/products/create" method="post" class="space-y-4">
+      <div>
+        <label for="productName" class="block text-gray-700">Product Name:</label>
+        <input type="text" id="productName" name="productName" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="productDesc" class="block text-gray-700">Product Description:</label>
+        <input type="text" id="productDesc" name="productDesc" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="productCode" class="block text-gray-700">Product Code:</label>
+        <input type="text" id="productCode" name="productCode" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="productStock" class="block text-gray-700">Stock:</label>
+        <input type="number" id="productStock" name="productStock" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="productPrice" class="block text-gray-700">Price (in GBP):</label>
+        <input type="number" step="0.01" id="productPrice" name="productPrice" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add Product</button>
+      </div>
+    </form>
+
+    <% if (messages.length > 0) { %>
+    <div id="message" class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+      <ul>
+        <% messages.forEach(message => { %>
+          <li><%= message %></li>
+        <% }); %>
+      </ul>
+    </div>
+    <% } %>
+</div>
+

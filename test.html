@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-800 h-screen">
+      <div class="text-white text-2xl font-bold p-4">Admin</div>
+      <ul>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white p-3"><a href="#">Dashboard</a></li>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white p-3"><a href="#">Users</a></li>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white p-3"><a href="#">Products</a></li>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white p-3"><a href="#">Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <header class="bg-white shadow-md p-4">
+        <div class="flex justify-between items-center">
+          <div class="text-xl font-bold">Dashboard</div>
+          <div class="flex items-center">
+            <div class="mr-4">Welcome, Admin</div>
+            <button class="bg-gray-800 text-white px-4 py-2 rounded">Logout</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="flex-1 p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Card 1 -->
+          <div class="bg-white p-4 shadow-md rounded-md">
+            <div class="text-lg font-bold mb-2">Total Users</div>
+            <div class="text-2xl">1,234</div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white p-4 shadow-md rounded-md">
+            <div class="text-lg font-bold mb-2">Total Products</div>
+            <div class="text-2xl">567</div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white p-4 shadow-md rounded-md">
+            <div class="text-lg font-bold mb-2">Revenue</div>
+            <div class="text-2xl">$89,123</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

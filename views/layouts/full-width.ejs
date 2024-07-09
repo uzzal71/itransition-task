@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><% title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-800 h-screen">
+      <div class="text-white text-2xl font-bold p-4">Admin</div>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <%- include('../partials/header.ejs') %>
+
+      <!-- Content -->
+      <main class="flex-1 p-4">
+        <%- body %>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -2,8 +2,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/sequelize';
 
-// Define the Product model
-const Product = sequelize.define('Product', {
+// Define the Product Failed model
+const ProductFailed = sequelize.define('ProductFailed', {
     intProductDataId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,31 +11,30 @@ const Product = sequelize.define('Product', {
     },
     strProductCode: {
         type: DataTypes.STRING(10),
-        unique: true,
-        allowNull: false,
+        allowNull: true,
     },
     strProductName: {
         type: DataTypes.STRING(50),
-        allowNull: false,
+        allowNull: true,
     },
     strProductDesc: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
     Stock: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.STRING(50),
+        allowNull: true,
     },
     Price: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false,
+        type: DataTypes.STRING(50),
+        allowNull: true,
     },
     dtmAdded: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING(50),
         allowNull: true,
     },
     dtmDiscontinued: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING(50),
         allowNull: true,
     },
     stmTimestamp: {
@@ -45,8 +44,8 @@ const Product = sequelize.define('Product', {
         onUpdate: DataTypes.NOW,
     },
 }, {
-    tableName: 'tblProductData',
+    tableName: 'tblProductDataFailed',
     timestamps: true,
 });
 
-export default Product;
+export default ProductFailed;
