@@ -126,6 +126,9 @@ export const processData = async (req, res) => {
         let failed = 0;
         let duplicated = 0;
 
+        await models.ProductFailed.truncate();
+        await models.ProductDuplicated.truncate();
+
         for (const data of parsedData) {
             processed++;
             const validationResult = validateData(data);
@@ -147,12 +150,7 @@ export const processData = async (req, res) => {
                         Price: data['Cost in GBP'],
                     });
                 } else {
-                    const existingDuplicatedProduct = await models.ProductDuplicated.findOne({
-                        where: { strProductCode: data['Product Code'] }
-                    });
-
-                    if (!existingDuplicatedProduct && !existingFailedProduct) {
-                        duplicated++;
+                    duplicated++;
                         await models.ProductDuplicated.create({
                             strProductCode: data['Product Code'],
                             strProductName: data['Product Name'],
@@ -160,7 +158,6 @@ export const processData = async (req, res) => {
                             Stock: data['Stock'],
                             Price: data['Cost in GBP'],
                         });
-                    }
                 }
             
                 continue;
